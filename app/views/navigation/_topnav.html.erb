@@ -1,0 +1,19 @@
+<div class="topnav">
+  <a class="active" href="#dashboard">Home</a>
+  <a href="#account">Account</a>
+  <a href="#contact">Contact</a>
+  <div class="login-container">
+    <% if logged_in? %>
+      <% if false %>
+        Welcome, <%= current_user.username %> <%= link_to "Log out", "sessions/destroy", method: :delete %>
+      <% end %>
+      Welcome, <%= current_user.username %> <%= link_to "Log out", {:controller=> "sessions", :action=> "destroy"}, method: :delete %>
+    <% else %>
+        <form action="login">
+        <input type="text" placeholder="Username" name="username">
+        <input type="text" placeholder="Password" name="password">
+        <button type="submit">Login</button>
+      </form>
+    <% end %>
+  </div>
+</div>
