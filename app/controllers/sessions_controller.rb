@@ -31,6 +31,7 @@ class SessionsController < ApplicationController
   end
 
   def dashboard
+    @school_name = Admin::Account.find_by(user_id: session[:user_id]).school_name
   end
 
   def destroy

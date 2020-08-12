@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resource :session
   resources :users, only: [:new, :create]
+  get 'admin/account', to: 'admin/account#edit'
+  patch 'admin/account', to: 'admin/account#update'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'

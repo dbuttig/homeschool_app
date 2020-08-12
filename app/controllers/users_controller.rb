@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(params.require(:user).permit(:username, :password))
+    Admin::Account.create(user: @user)
     session[:user_id] = @user.id
     redirect_to '/welcome'
   end

@@ -2,7 +2,11 @@
 
 <!-- Page content -->
 <div class="main">
-<h1>Homeschool Dashboard</h1>
+  <% if @school_name %>
+    <h1><%= @school_name %> Dashboard</h1>
+  <% else %>
+    <h1>Homeschool Dashboard</h1>
+  <% end %>
 
-This is where you find all your stuff
+  This is where you find all your stuff
 </div>

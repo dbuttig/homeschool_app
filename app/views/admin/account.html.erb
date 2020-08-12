@@ -1,0 +1,13 @@
+<%= render "navigation/topnav" %>
+
+<!-- Page content -->
+<div class="main">
+<h1>Account Management</h1>
+
+<%= form_tag '/account' do %>
+  <%= label_tag :school_name%>
+  <%= text_field_tag :school_name %>
+  <%= submit_tag "Update"%>
+<%end%>
+
+</div>
