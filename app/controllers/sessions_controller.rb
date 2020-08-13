@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/dashboard'
     else
-      redirect_to '/login'
+      redirect_to '/login', notice: "Invalid user/password combination."
     end
   end
 
